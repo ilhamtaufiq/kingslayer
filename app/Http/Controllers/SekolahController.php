@@ -94,7 +94,7 @@ class SekolahController extends Controller
     }
 
     public function edit($id_sekolah)
-    {
+    { 
         $data = [
             'title' => 'Edit Data Sekolah',
             'kecamatan' => $this->KecamatanModel->AllData(),

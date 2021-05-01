@@ -9,6 +9,10 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\KoordinatController;
 use App\Http\Controllers\SekolahController;
+use App\Http\Controllers\KegiatanController;
+use App\Http\Controllers\DropdownController;
+
+
 
 
 
@@ -26,7 +30,7 @@ use App\Http\Controllers\SekolahController;
 */
 
 Route::get('/', [WebController::class, 'index'])->name('v_web');
-//Route::get('/kecamatan/{id_kecamatan}', [WebController::class, 'kecamatan'])->name('v_kecamatan');
+Route::get('/kec/{id_kecamatan}', [WebController::class, 'kecamatan'])->name('v_kecamatan');
 Route::get('/detail/{id_sekolah}', [WebController::class, 'detail'])->name('detail');
 
 
@@ -57,9 +61,19 @@ Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa
 
 //Pekerjaan
 Route::get('/pekerjaan', [PekerjaanController::class, 'index'])->name('pekerjaan');
+Route::get('/pekerjaan/add', [PekerjaanController::class, 'add']);
+Route::post('/pekerjaan/insert', [PekerjaanController::class, 'insert']);
+Route::get('/pekerjaan/edit/{id_pekerjaan}', [PekerjaanController::class, 'edit']);
+Route::post('/pekerjaan/update/{id_pekerjaan}', [PekerjaanController::class, 'update']);
+Route::get('/pekerjaan/delete/{id_pekerjaan}', [PekerjaanController::class, 'delete']);
+Route::get('getDesa',[PekerjaanController::class, 'getDesa'])->name('getState');
+
+//Kegiatan
+Route::get('/kegiatan', [KegiatanController::class, 'index'])->name('kegiatan');
 
 //Koordinat
 Route::get('/koordinat', [KoordinatController::class, 'index'])->name('koordinat');
+
 
 //Sekolah
 
@@ -69,4 +83,7 @@ Route::post('/sekolah/insert', [SekolahController::class, 'insert']);
 Route::get('/sekolah/edit/{id_sekolah}', [SekolahController::class, 'edit']);
 Route::post('/sekolah/update/{id_sekolah}', [SekolahController::class, 'update']);
 Route::get('/sekolah/delete/{id_sekolah}', [SekolahController::class, 'delete']);
+
+Route::get('dropdown',[DropdownController::class, 'index']);
+Route::get('getState',[DropdownController::class, 'getState'])->name('getState');
 

@@ -24,6 +24,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('adminlte') }}/dist/css/adminlte.min.css">
 
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/summernote/summernote-bs4.min.css">
+  
+
   <!-- jQuery -->
 <script src="{{ asset('adminlte') }}/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
@@ -44,9 +58,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte') }}/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('adminlte') }}/dist/js/demo.js"></script>
 <script src="{{asset('adminlte')}}/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
 <script src="{{asset('adminlte')}}/plugins/chart.js/Chart.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -143,6 +158,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </p>
                 </a>
             </li>
+            <li class="nav-item">
+              <a href="/pekerjaan" class="nav-link {{request()->is('pekerjaan') ? 'active' : ''}}">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Daftar Pekerjaan
+                  <span class="right badge badge-danger"></span>
+                </p>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a href="/kegiatan" class="nav-link {{request()->is('kegiatan') ? 'active' : ''}}">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Daftar Kegiatan
+                <span class="right badge badge-danger"></span>
+              </p>
+            </a>
+        </li>
             <!--
             <li class="nav-item">
                 <a href="#" class="nav-link">

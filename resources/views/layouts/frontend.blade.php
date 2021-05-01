@@ -61,7 +61,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Kecamatan</a>
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
               @foreach ($kecamatan as $k )
-              <li><a href="/kecamatan/{{$k->id_kecamatan}}" class="dropdown-item">{{$k->kecamatan}}</a></li>
+              <li><a href="/kec/{{$k->id_kecamatan}}" class="dropdown-item">{{$k->kecamatan}}</a></li>
               @endforeach
             </ul>
           </li>
