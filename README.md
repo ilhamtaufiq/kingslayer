@@ -1,8 +1,13 @@
 # Changelog
-## V.1.0
-### Added:
-#### Tambah Data Pekerjaan
-#### Edit Data Pekerjaan
-#### Hapus Data Pekerjaan
-### Fixed:
-#### Dependent Drop Down List
+
+Semua perubahan penting pada proyek ini akan didokumentasikan dalam file ini.
+
+## [0.0.1] - 01 Mei 2021
+
+### Added 
+
+- Modul Daftar Pekerjaan Kegiatan Sarana Prasarana Sanitasi
+
+### Fixed
+
+- Dependent Dropdown List pada Kecamatan dan Desa
