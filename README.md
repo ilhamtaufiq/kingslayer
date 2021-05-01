@@ -11,3 +11,4 @@ Semua perubahan penting pada proyek ini akan didokumentasikan dalam file ini.
 ### Fixed
 
 - Dependent Dropdown List pada Kecamatan dan Desa
+- Salahtik di beberapa File Component

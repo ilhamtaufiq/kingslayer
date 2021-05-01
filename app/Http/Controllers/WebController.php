@@ -16,7 +16,7 @@ class WebController extends Controller
     public function index()
     {
         $data = [
-            'title' => 'Pemetaan Sekolah',
+            'title' => 'Sistem Informasi Manajemen Sanitasi Kab. Cianjur',
             'kecamatan' => $this->WebModel->DataKecamatan(),
             'jenjang' => $this->WebModel->DataJenjang(),
             'sekolah' => $this->WebModel->AllDataSekolah(),
