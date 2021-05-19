@@ -15,18 +15,26 @@ class WebController extends Controller
 
     public function index()
     {
+        $total_pekerjaan = DB::table('tbl_pekerjaan')->count();
+        $anggaran = DB::table('tbl_pekerjaan')->sum('pagu');
+
         $data = [
             'title' => 'Sistem Informasi Manajemen Sanitasi Kab. Cianjur',
             'kecamatan' => $this->WebModel->DataKecamatan(),
             'jenjang' => $this->WebModel->DataJenjang(),
             'sekolah' => $this->WebModel->AllDataSekolah(),
+            'pekerjaan' => $this->WebModel->AllDataKoordinat(),
+            'kegiatan' => $this->WebModel->AllDataKegiatan(),
+            'total_pekerjaan' => $total_pekerjaan,
+            'anggaran' => $anggaran,
         ];
-        return view('v_web', $data);
+        return view('v_web-san', $data);
     }
 
     public function kecamatan($id_kecamatan)
     {
         $kec = $this->WebModel->DetailKecamatan($id_kecamatan);
+
         $data = [
             'title' => 'Kecamatan ' . $kec->kecamatan,
             'kecamatan' => $this->WebModel->DataKecamatan(),
@@ -34,7 +42,10 @@ class WebController extends Controller
             'jenjang' => $this->WebModel->DataJenjang(),
             'sekolah' => $this->WebModel->AllDataSekolah(),
             'sklh' => $this->WebModel->DataSekolah($id_kecamatan),
+            'sanitasi' => $this->WebModel->DataSanitasi($id_kecamatan),
+            'kegiatan' => $this->WebModel->AllDataKegiatan(),
 
+            
         ];
         return view('v_kecamatan', $data);
 
@@ -51,6 +62,19 @@ class WebController extends Controller
 
         ];
         return view('v_detail', $data);
+
+    }
+    public function detailSan($detailSan)
+    {
+        $pekerjaan = $this->WebModel->detailSan($detailSan);
+        $data = [
+            'title' => 'Detail ' .$pekerjaan->pekerjaan,
+            'kecamatan' => $this->WebModel->DataKecamatan(),
+            'pekerjaan' => $pekerjaan
+            
+
+        ];
+        return view('v_detail-san', $data);
 
     }
 

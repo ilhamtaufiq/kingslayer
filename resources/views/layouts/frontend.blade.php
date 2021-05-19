@@ -16,6 +16,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('adminlte') }}/dist/css/adminlte.min.css">
+    <!-- DataTables -->
+  <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="{{ asset('adminlte') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- REQUIRED SCRIPTS -->
 
     <!-- jQuery -->
@@ -24,9 +28,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{ asset('adminlte') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('adminlte') }}/dist/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('adminlte') }}/dist/js/demo.js"></script>
-
+    <!-- DataTables -->
+<!-- DataTables  & Plugins -->
+<script src="{{ asset('adminlte') }}/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/jszip/jszip.min.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="{{ asset('adminlte') }}/plugins/datatables-buttons/js/buttons.colVis.min.js"></script
     <!-- Leaflet -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -40,7 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+  <nav class="main-header navbar fixed-top navbar-expand-md navbar-dark bg-dark navbar-white">
     <div class="container">
       <a href="{{ asset('adminlte') }}/index3.html" class="navbar-brand">
         <img src="{{ asset('adminlte') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -116,10 +131,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      Aplikasi Sistem Informasi Sanitasi Kab. Cianjur
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021 <a href="#">Ilham Taufik</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->

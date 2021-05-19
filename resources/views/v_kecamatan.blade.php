@@ -1,32 +1,39 @@
 @extends('layouts.frontend')
 @section('content')
-<div class="col-md-12" id="map" style="width: 100%; height: 500px;"></div>
+
+<!-- <div class="col-md-12" id="map" style="width: 100%; height: 500px;"></div> -->
 <div class="col-sm-12">
 <br />
 <br />
   <div class="text-center">
-    <h2>Data Sekolah</h2>
+    <h2>Data Sarana dan Prasarana Sanitasi {{$title}}</h2>
   </div>
   <table id="example1" class="table table-bordered table-striped">
     <thead>
         <tr>
             <th width=60px>No</th>
-            <th>Nama Sekolah</th>
-            <th>Jenjang</th>
-            <th width=50px>Status</th>
+            <th>Kegiatan</th>
+            <th>Pekerjaan</th>
+            <th>Desa</th>
             <th>Kecamatan</th>
-            <th class="text-center">Foto</th>
+            <th>Pagu</th>
+            <th>Tahun Anggaran</th>
+            <th width=100px class="text-center">Opsi</th>
         </tr>
         <tbody>
             <?php $no=1; ?>
-            @foreach ($sklh as $data)
+            @foreach ($sanitasi as $data)
             <tr>
                 <td>{{ $no++ }}</td>
-                <td>{{ $data->nama_sekolah }}</td>
-                <td>{{$data->jenjang}}</td>
-                <td>{{$data->status}}</td>
-                <td>{{$data->kecamatan}}</td>
-                <td class="text-center"><img src="{{asset('foto')}}/{{$data->foto}}" width="100px"></td>
+                <td>{{ $data->nama_kegiatan }}</td>
+                <td>{{ $data->pekerjaan }}</td>
+                <td>{{ $data->desa }}</td>
+                <td>{{ $data->kecamatan }}</td>
+                <td>@currency($data->pagu)</td>
+                <td>{{ $data->tahun }}</td>
+                <td class="text-center">
+                    <a href="/detailpekerjaan/{{$data->id_pekerjaan}}"><i class="fa fa-eye"></i></a>
+                </td>
             </tr>    
             @endforeach
         </tbody>
@@ -34,6 +41,7 @@
 </table>
 </div>
 <script>
+  /*
     var peta1 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
 			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -134,6 +142,20 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
       .addTo(jenjang{{$j->id_jenjang}})
       .bindPopup(informasi);
   @endforeach
-
+  **/
+  $(function () {
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
 </script>
 @endsection

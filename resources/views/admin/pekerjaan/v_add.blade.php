@@ -57,7 +57,7 @@
               <div class="col-sm-6">
                 <div class="form-group">
                   <label for="id_desa">Desa</label>
-                  <select name="id_desa" id="id_desa" class="form-control"></select>
+                  <select value="" name="id_desa" id="id_desa" class="form-control" ></select>
                 </div>
               </div>
               <div class="col-sm-6">
@@ -103,7 +103,7 @@
       success:function(res){        
       if(res){
         $("#id_desa").empty();
-        $("#id_desa").append('<option>Pilih Desa</option>');
+        $("#id_desa").append('<option value=""></option>');
         $.each(res,function(key,value){
           $("#id_desa").append('<option value="'+key+'">'+value+'</option>');
         });

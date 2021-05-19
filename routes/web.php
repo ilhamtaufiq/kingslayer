@@ -32,6 +32,8 @@ use App\Http\Controllers\DropdownController;
 Route::get('/', [WebController::class, 'index'])->name('v_web');
 Route::get('/kec/{id_kecamatan}', [WebController::class, 'kecamatan'])->name('v_kecamatan');
 Route::get('/detail/{id_sekolah}', [WebController::class, 'detail'])->name('detail');
+Route::get('/detailpekerjaan/{id_pekerjaan}', [WebController::class, 'detailSan'])->name('detailSan');
+
 
 
 Auth::routes();

@@ -36,7 +36,7 @@
                     <tr>
                         <td>{{ $no++ }}</td>
                         <td>{{ $data->pekerjaan }}</td>
-                        <td>{{ $data->posisi }}</td>
+                        <td>{{ $data->latlong }}</td>
                         <td class="text-center">
                             <a href="/koordinat/edit/{{$data->id_koordinat}}"><i class="fa fa-edit"></i></a>
                             <button class="btn btn-sm btn-primary" href="/koordinat/delete/{{$data->id_koordinat}}" data-toggle="modal" data-target="#delete{{$data->id_koordinat}}"><i class="fa fa-trash "></i></button>
@@ -121,7 +121,7 @@ var peta4 = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}
    //mengambil koordinat
 
    @foreach($koordinat as $data)
-      L.marker([<?= $data->posisi ?>]).addTo(map);
+      L.marker([<?= $data->latlong ?>]).addTo(map);
   @endforeach
          
     $(function () {

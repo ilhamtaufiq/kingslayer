@@ -115,7 +115,7 @@ class PekerjaanController extends Controller
         [
             'id_kegiatan' => 'required',
             'pekerjaan' => 'required',
-           // 'id_desa' => 'required',
+            'id_desa' => 'required',
             'id_kecamatan' => 'required',
             'pagu' => 'required',
             'tahun.required' => 'Hanya Diperbolehkan Tahun 1997-2030',
